@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Admin — dashboard, review, member management
+   ========================================================================== */
+
+.admin-shell{ min-height: 100vh; display: flex; flex-direction: column; background: var(--paper); }
+
+.admin-topbar{
+  background: var(--sky-600); color: #fff; padding: 14px 0;
+}
+.admin-topbar .container{ display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.admin-topbar .who{ display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+.admin-topbar .avatar{ width: 36px; height: 36px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 2px solid rgba(255,255,255,0.6); flex-shrink: 0; }
+.topbar-logo-mark{ width: 100%; height: 100%; object-fit: cover; }
+.admin-topbar a.logout{ color: #DCE9F0; font-size: 0.88rem; text-decoration: none; }
+.admin-topbar a.logout:hover{ text-decoration: underline; }
+
+.admin-main{ flex: 1; padding: 28px 0 60px; }
+
+.stat-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 30px; }
+.stat-card{ background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-card); }
+.stat-card .num{ font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--field-700); }
+.stat-card .label{ font-size: 0.85rem; color: var(--ink-soft); margin-top: 2px; }
+.stat-card.accent-warn .num{ color: var(--warn-600); }
+.stat-card.accent-good .num{ color: var(--good-600); }
+.stat-card.accent-bad .num{ color: var(--bad-600); }
+
+.admin-actions-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 34px; }
+.admin-action{
+  display: flex; align-items: center; gap: 12px; background: var(--paper-raised); border: 1px solid var(--line);
+  border-radius: var(--radius-md); padding: 16px; text-decoration: none; color: var(--ink); font-weight: 600;
+}
+.admin-action:hover{ border-color: var(--sky-500); }
+.admin-action .icon{ width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--sky-100); color: var(--sky-600); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+
+/* search / filters */
+.search-bar{ display: flex; gap: 10px; margin-bottom: 16px; }
+.search-bar input{ flex: 1; }
+.filter-row{ display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.filter-chip{
+  border: 1.5px solid var(--line); background: #fff; padding: 9px 16px; border-radius: 999px;
+  font-weight: 500; font-size: 0.9rem; cursor: pointer; color: var(--ink-soft);
+}
+.filter-chip[aria-pressed="true"]{ background: var(--sky-100); border-color: var(--sky-500); color: var(--sky-600); }
+
+/* member list */
+.member-list{ display: flex; flex-direction: column; gap: 10px; }
+.member-card{
+  background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-md);
+  padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+}
+.member-card .who{ display: flex; align-items: center; gap: 12px; }
+.member-card .initials{ width: 42px; height: 42px; border-radius: 50%; background: var(--field-100); color: var(--field-700); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+.member-card .name{ font-weight: 600; }
+.member-card .meta{ font-size: 0.85rem; color: var(--ink-soft); }
+
+/* application review */
+.review-card{ background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-card); }
+.review-head{ display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+.review-section{ margin-bottom: 22px; }
+.review-section h3{ font-size: 1.02rem; margin-bottom: 10px; color: var(--field-700); }
+.review-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 24px; }
+.review-actions{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 10px; }
+.review-actions .btn{ flex: 1; min-width: 160px; }
+.btn-approve{ background: var(--good-600); color: #fff; }
+.btn-approve:hover{ background: #245730; }
+.btn-reject{ background: #fff; color: var(--bad-600); border-color: var(--bad-600); }
+.btn-reject:hover{ background: var(--bad-100); }
+.btn-correction{ background: #fff; color: var(--warn-600); border-color: var(--warn-600); }
+.btn-correction:hover{ background: var(--warn-100); }
+
+/* modal */
+.modal-overlay{
+  position: fixed; inset: 0; background: rgba(20,26,18,0.5); display: none;
+  align-items: center; justify-content: center; padding: 20px; z-index: 100;
+}
+.modal-overlay.open{ display: flex; }
+.modal{ background: #fff; border-radius: var(--radius-lg); padding: 26px; max-width: 420px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+.modal h3{ margin-bottom: 10px; }
+.modal p{ color: var(--ink-soft); }
+.modal-actions{ display: flex; gap: 10px; margin-top: 20px; }
+.modal-actions .btn{ flex: 1; }
+.reason-list{ display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+
+/* membership card */
+.mcard-wrap{ display: flex; justify-content: center; padding: 10px 0 20px; }
+.membership-card{
+  width: 100%; max-width: 380px; border-radius: 18px; padding: 26px;
+  background: linear-gradient(135deg, var(--field-700), var(--field-600));
+  color: #fff; position: relative; overflow: hidden;
+  box-shadow: 0 18px 40px rgba(30,60,34,0.3);
+}
+.membership-card::after{
+  content: ""; position: absolute; right: -40px; bottom: -40px; width: 160px; height: 160px;
+  border-radius: 50%; background: rgba(214,154,45,0.18);
+}
+.membership-card .mc-top{ display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; }
+.membership-card .mc-brand{ font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+.membership-card .mc-type{ font-size: 0.7rem; letter-spacing: 0.04em; color: var(--wheat-100); }
+.mc-logo-mark{ width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; flex-shrink: 0; }
+.membership-card .mc-name{ font-family: var(--font-display); font-size: 1.5rem; margin: 22px 0 4px; position: relative; z-index: 2; }
+.membership-card .mc-id{ font-size: 0.95rem; color: var(--wheat-100); margin-bottom: 18px; position: relative; z-index: 2; }
+.membership-card .mc-row{ display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 2; }
+.membership-card .mc-details .k{ font-size: 0.68rem; color: #CFE0CE; }
+.membership-card .mc-details .v{ font-size: 0.88rem; font-weight: 600; }
+.membership-card .qr-placeholder{ width: 68px; height: 68px; background: #fff; border-radius: 8px; padding: 6px; }
+.membership-card .qr-placeholder svg{ width: 100%; height: 100%; }
+.membership-card .mc-status{ margin-top: 14px; }
+
+@media (max-width: 720px){
+  .stat-grid{ grid-template-columns: repeat(2, 1fr); }
+  .admin-actions-grid{ grid-template-columns: 1fr; }
+  .review-grid{ grid-template-columns: 1fr; }
+  .review-actions .btn{ min-width: 0; }
+}

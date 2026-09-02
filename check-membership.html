@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Check Membership — Kisan Union</title>
+<meta name="description" content="Enter your Membership ID to check your Kisan Union membership status.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.jpg" alt="Kisan Union — Bharatiya Kisan Union Punjab emblem" class="logo-mark">
+      <span>Kisan Union<span class="logo-tag">Farmers United. Farmers Strong.</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="check-membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin-login.html" class="nav-admin">Admin Login</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="container">
+    <a href="index.html" class="back-link">&lsaquo; Back to home</a>
+    <h1>Check Kisan Union Membership</h1>
+    <p>Enter your Membership ID to check your membership status.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="panel panel-narrow">
+      <form id="checkMembershipForm" novalidate>
+        <div class="field">
+          <label for="membershipIdInput">Membership ID</label>
+          <input type="text" id="membershipIdInput" name="membershipId" placeholder="e.g. KU-100001" autocomplete="off">
+          <p class="hint">Try a sample ID: KU-100001 (Verified), KU-100002 (Pending), KU-100003 (Rejected), KU-100004 (Suspended).</p>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="checkStatusBtn">
+          <span class="spinner"></span>
+          Check Status
+        </button>
+      </form>
+
+      <div id="membershipSkeleton" hidden style="margin-top:26px;">
+        <div class="skeleton" style="height:64px; width:64px; border-radius:50%; margin:0 auto 16px;"></div>
+        <div class="skeleton" style="height:18px; width:60%; margin:0 auto 10px;"></div>
+        <div class="skeleton" style="height:14px; width:80%; margin:0 auto;"></div>
+      </div>
+
+      <div id="membershipResult" hidden style="margin-top:26px;"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="logo-mark footer-logo-mark">
+      <div>
+        <span>Kisan Union</span>
+        <p>Farmers United. Farmers Strong.</p>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="register.html">Register</a>
+      <a href="check-membership.html">Check Membership</a>
+      <a href="contact.html">Contact Head Union</a>
+      <a href="admin-login.html">Admin Login</a>
+    </nav>
+    <div class="footer-legal">
+      <p>&copy; 2026 Kisan Union. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Membership Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/membership.js"></script>
+</body>
+</html>

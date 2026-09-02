@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Application Review — Kisan Union Admin</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-shell">
+
+<div class="admin-topbar">
+  <div class="container">
+    <div class="who">
+      <div class="avatar"><img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="topbar-logo-mark"></div>
+      <div>
+        <div style="font-weight:600;">Admin</div>
+        <div style="font-size:0.78rem; color:#DCE9F0;">Kisan Union Administrator</div>
+      </div>
+    </div>
+    <a href="admin-login.html" class="logout">Log out</a>
+  </div>
+</div>
+
+<main class="admin-main">
+  <div class="container">
+    <a href="members.html" class="back-link">&larr; Back to members</a>
+
+    <div class="review-card">
+      <div class="review-head">
+        <div>
+          <h1 style="font-size:1.35rem; margin-bottom:4px;">Application #KU-100230</h1>
+          <p id="reviewStatusNote" style="margin:0; color:var(--ink-soft);"><span class="status-badge pending">Pending</span> Awaiting review</p>
+        </div>
+        <a href="member-card.html" class="btn btn-outline" style="min-height:auto; padding:9px 16px;">Preview Membership Card</a>
+      </div>
+
+      <div class="review-section">
+        <h3>Member information</h3>
+        <div class="review-grid">
+          <div class="summary-item"><div class="k">Name</div><div class="v">Sukhwinder Singh</div></div>
+          <div class="summary-item"><div class="k">Father's name</div><div class="v">Gurdev Singh</div></div>
+          <div class="summary-item"><div class="k">Village</div><div class="v">Maur Mandi</div></div>
+          <div class="summary-item"><div class="k">District</div><div class="v">Bathinda</div></div>
+          <div class="summary-item"><div class="k">State</div><div class="v">Punjab</div></div>
+          <div class="summary-item"><div class="k">Mobile</div><div class="v">98XXXXXX10</div></div>
+        </div>
+      </div>
+
+      <div class="review-section">
+        <h3>Verification information</h3>
+        <div class="review-grid">
+          <div class="summary-item"><div class="k">Identity verification</div><div class="v">Pending</div></div>
+          <div class="summary-item"><div class="k">Submitted</div><div class="v">2 days ago</div></div>
+        </div>
+      </div>
+
+      <div class="review-actions">
+        <button class="btn btn-approve" id="approveBtn">&#9989; Approve Member</button>
+        <button class="btn btn-reject" id="rejectBtn">&#10060; Reject Application</button>
+        <button class="btn btn-correction" id="correctionBtn">&#128260; Request Correction</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Approve confirmation modal -->
+<div class="modal-overlay" id="approveModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="approveTitle">
+    <h3 id="approveTitle">Approve this membership application?</h3>
+    <p>Sukhwinder Singh will become a verified Kisan Union member and receive a membership ID.</p>
+    <div class="modal-actions">
+      <button class="btn btn-outline" data-close-modal>Cancel</button>
+      <button class="btn btn-approve" id="confirmApproveBtn"><span class="spinner"></span> Approve</button>
+    </div>
+  </div>
+</div>
+
+<!-- Reject confirmation modal -->
+<div class="modal-overlay" id="rejectModal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="rejectTitle">
+    <h3 id="rejectTitle">Reject this application?</h3>
+    <p>Please select a reason to share with the applicant.</p>
+    <div class="reason-list">
+      <label class="radio-chip" style="width:100%;"><input type="radio" name="rejectReason" value="Incomplete information"><span>Incomplete information</span></label>
+      <label class="radio-chip" style="width:100%;"><input type="radio" name="rejectReason" value="Identity could not be verified"><span>Identity could not be verified</span></label>
+      <label class="radio-chip" style="width:100%;"><input type="radio" name="rejectReason" value="Duplicate application"><span>Duplicate application</span></label>
+    </div>
+    <p id="rejectReasonWarning" hidden style="color:var(--bad-600); font-size:0.85rem; font-weight:500;">Please select a reason before rejecting.</p>
+    <div class="modal-actions">
+      <button class="btn btn-outline" data-close-modal>Cancel</button>
+      <button class="btn btn-reject" id="confirmRejectBtn"><span class="spinner"></span> Reject</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All Members — Kisan Union Admin</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-shell">
+
+<div class="admin-topbar">
+  <div class="container">
+    <div class="who">
+      <div class="avatar"><img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="topbar-logo-mark"></div>
+      <div>
+        <div style="font-weight:600;">Admin</div>
+        <div style="font-size:0.78rem; color:#DCE9F0;">Kisan Union Administrator</div>
+      </div>
+    </div>
+    <a href="admin-login.html" class="logout">Log out</a>
+  </div>
+</div>
+
+<main class="admin-main">
+  <div class="container">
+    <a href="admin-dashboard.html" class="back-link">&larr; Back to dashboard</a>
+    <h1 style="font-size:1.5rem; margin-bottom:18px;">All Members</h1>
+
+    <div class="search-bar">
+      <input type="search" id="memberSearch" placeholder="Search by name, membership ID, village...">
+    </div>
+
+    <div class="filter-row">
+      <button class="filter-chip" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-chip" data-filter="verified" aria-pressed="false">Verified</button>
+      <button class="filter-chip" data-filter="pending" aria-pressed="false">Pending</button>
+      <button class="filter-chip" data-filter="rejected" aria-pressed="false">Rejected</button>
+      <button class="filter-chip" data-filter="suspended" aria-pressed="false">Suspended</button>
+    </div>
+
+    <div class="member-list" id="memberList"></div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

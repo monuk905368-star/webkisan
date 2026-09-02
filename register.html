@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register as Member — Kisan Union</title>
+<meta name="description" content="Register as a Kisan Union member in a few simple steps.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.jpg" alt="Kisan Union — Bharatiya Kisan Union Punjab emblem" class="logo-mark">
+      <span>Kisan Union<span class="logo-tag">Farmers United. Farmers Strong.</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="check-membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin-login.html" class="nav-admin">Admin Login</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="container">
+    <a href="index.html" class="back-link">&lsaquo; Back to home</a>
+    <h1>Register as Kisan Union Member</h1>
+    <p>Fill in your details in four short steps. It takes about 3 minutes.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="panel panel-narrow">
+
+      <div class="progress-steps" aria-hidden="false">
+        <div class="p-step active">
+          <div class="p-bar"></div>
+          <div class="p-label">Basic Info</div>
+        </div>
+        <div class="p-step">
+          <div class="p-bar"></div>
+          <div class="p-label">Location</div>
+        </div>
+        <div class="p-step">
+          <div class="p-bar"></div>
+          <div class="p-label">Verification</div>
+        </div>
+        <div class="p-step">
+          <div class="p-bar"></div>
+          <div class="p-label">Review</div>
+        </div>
+      </div>
+
+      <form id="registrationForm" novalidate>
+
+        <!-- Step 1: Basic Information -->
+        <div class="form-step active">
+          <h2 style="font-size:1.35rem;">Basic information</h2>
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name">
+            <p class="error-msg">Please enter your full name.</p>
+          </div>
+          <div class="field">
+            <label for="relativeName">Father's / Mother's name</label>
+            <input type="text" id="relativeName" name="relativeName" required>
+            <p class="error-msg">Please enter this name.</p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="dob">Date of birth</label>
+              <input type="date" id="dob" name="dob" required>
+              <p class="error-msg">Please enter your date of birth.</p>
+            </div>
+            <div class="field" data-group="gender">
+              <label>Gender</label>
+              <div class="radio-group">
+                <label class="radio-chip"><input type="radio" name="gender" value="Male" required><span>Male</span></label>
+                <label class="radio-chip"><input type="radio" name="gender" value="Female"><span>Female</span></label>
+                <label class="radio-chip"><input type="radio" name="gender" value="Other"><span>Other</span></label>
+              </div>
+              <p class="error-msg">Please select a gender.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="mobile">Mobile number</label>
+            <input type="tel" id="mobile" name="mobile" required inputmode="numeric" maxlength="10" placeholder="e.g. 9876543210">
+            <p class="hint">This number is used as your unique member ID check — one membership per mobile number, so no one can register more than once.</p>
+            <p class="error-msg" id="mobileErrorMsg">Please enter a valid 10-digit mobile number.</p>
+          </div>
+          <div class="form-actions">
+            <span></span>
+            <button type="button" class="btn btn-primary" data-action="next-step">Next: Location</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Location -->
+        <div class="form-step">
+          <h2 style="font-size:1.35rem;">Location</h2>
+          <div class="field-row">
+            <div class="field">
+              <label for="village">Village</label>
+              <input type="text" id="village" name="village" required>
+              <p class="error-msg">Please enter your village.</p>
+            </div>
+            <div class="field">
+              <label for="tehsil">Tehsil</label>
+              <input type="text" id="tehsil" name="tehsil" required>
+              <p class="error-msg">Please enter your tehsil.</p>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="district">District</label>
+              <input type="text" id="district" name="district" required>
+              <p class="error-msg">Please enter your district.</p>
+            </div>
+            <div class="field">
+              <label for="state">State</label>
+              <input type="text" id="state" name="state" required>
+              <p class="error-msg">Please enter your state.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required></textarea>
+            <p class="error-msg">Please enter your address.</p>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" data-action="prev-step">Back</button>
+            <button type="button" class="btn btn-primary" data-action="next-step">Next: Verification</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Identity / Verification -->
+        <div class="form-step">
+          <h2 style="font-size:1.35rem;">Identity verification</h2>
+          <div class="panel" style="background:var(--sky-100); border-color:var(--sky-500); padding:18px 20px; margin-bottom:22px;">
+            <p style="margin:0; color:var(--field-700); font-weight:500;">Your identity information will be securely reviewed by an authorized Union representative. This prototype does not collect or verify Aadhaar numbers.</p>
+          </div>
+          <div class="field">
+            <label for="idType">ID document type</label>
+            <select id="idType" name="idType" required>
+              <option value="">Select document type</option>
+              <option value="Voter ID">Voter ID</option>
+              <option value="Ration Card">Ration Card</option>
+              <option value="Driving Licence">Driving Licence</option>
+              <option value="Other Government ID">Other Government ID</option>
+            </select>
+            <p class="hint">You will be asked to show the original document to a Union representative during verification.</p>
+            <p class="error-msg">Please select a document type.</p>
+          </div>
+          <div class="field checkbox-row">
+            <input type="checkbox" id="landOwner" name="landOwner">
+            <label for="landOwner">I own or work on agricultural land</label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" data-action="prev-step">Back</button>
+            <button type="button" class="btn btn-primary" data-action="next-step">Next: Review</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Review -->
+        <div class="form-step">
+          <h2 style="font-size:1.35rem;">Review your application</h2>
+          <p class="text-muted" style="color:var(--ink-soft);">Please check your details before submitting.</p>
+          <div class="summary-grid">
+            <div class="summary-item"><div class="k">Full name</div><div class="v" id="sum_fullName">—</div></div>
+            <div class="summary-item"><div class="k">Father's/Husband's name</div><div class="v" id="sum_relativeName">—</div></div>
+            <div class="summary-item"><div class="k">Date of birth</div><div class="v" id="sum_dob">—</div></div>
+            <div class="summary-item"><div class="k">Gender</div><div class="v" id="sum_gender">—</div></div>
+            <div class="summary-item"><div class="k">Mobile number</div><div class="v" id="sum_mobile">—</div></div>
+            <div class="summary-item"><div class="k">Village</div><div class="v" id="sum_village">—</div></div>
+            <div class="summary-item"><div class="k">Tehsil</div><div class="v" id="sum_tehsil">—</div></div>
+            <div class="summary-item"><div class="k">District</div><div class="v" id="sum_district">—</div></div>
+            <div class="summary-item"><div class="k">State</div><div class="v" id="sum_state">—</div></div>
+            <div class="summary-item"><div class="k">Address</div><div class="v" id="sum_address">—</div></div>
+          </div>
+          <div class="field checkbox-row">
+            <input type="checkbox" id="confirmCorrect" name="confirmCorrect" required>
+            <label for="confirmCorrect">I confirm that the information provided by me is correct.</label>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline" data-action="prev-step">Back</button>
+            <button type="submit" class="btn btn-primary" id="submitApplicationBtn">
+              <span class="spinner"></span>
+              Submit Membership Application
+            </button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="logo-mark footer-logo-mark">
+      <div>
+        <span>Kisan Union</span>
+        <p>Farmers United. Farmers Strong.</p>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="register.html">Register</a>
+      <a href="check-membership.html">Check Membership</a>
+      <a href="contact.html">Contact Head Union</a>
+      <a href="admin-login.html">Admin Login</a>
+    </nav>
+    <div class="footer-legal">
+      <p>&copy; 2026 Kisan Union. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Membership Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/registration.js"></script>
+</body>
+</html>

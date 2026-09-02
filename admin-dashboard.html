@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Dashboard — Kisan Union</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin-shell">
+
+<div class="admin-topbar">
+  <div class="container">
+    <div class="who">
+      <div class="avatar"><img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="topbar-logo-mark"></div>
+      <div>
+        <div style="font-weight:600;">Admin</div>
+        <div style="font-size:0.78rem; color:#DCE9F0;">Kisan Union Administrator</div>
+      </div>
+    </div>
+    <a href="admin-login.html" class="logout">Log out</a>
+  </div>
+</div>
+
+<main class="admin-main">
+  <div class="container">
+    <div style="margin-bottom:22px;">
+      <h1 style="font-size:1.6rem; margin-bottom:4px;">Dashboard</h1>
+      <p style="color:var(--ink-soft); margin:0;">An overview of Kisan Union membership activity.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num">1,284</div>
+        <div class="label">Total Members</div>
+      </div>
+      <div class="stat-card accent-warn">
+        <div class="num">37</div>
+        <div class="label">Pending Applications</div>
+      </div>
+      <div class="stat-card accent-good">
+        <div class="num">1,201</div>
+        <div class="label">Verified Members</div>
+      </div>
+      <div class="stat-card accent-bad">
+        <div class="num">46</div>
+        <div class="label">Rejected Applications</div>
+      </div>
+    </div>
+
+    <h2 style="font-size:1.15rem; margin-bottom:14px;">Main actions</h2>
+    <div class="admin-actions-grid">
+      <a href="members.html?filter=pending" class="admin-action">
+        <div class="icon">&#128203;</div>
+        Pending Applications
+      </a>
+      <a href="members.html" class="admin-action">
+        <div class="icon">&#128101;</div>
+        All Members
+      </a>
+      <a href="members.html" class="admin-action">
+        <div class="icon">&#128269;</div>
+        Search Member
+      </a>
+      <a href="application-review.html" class="admin-action">
+        <div class="icon">&#9989;</div>
+        Verification
+      </a>
+      <a href="contact.html" class="admin-action">
+        <div class="icon">&#128222;</div>
+        Contact / Support
+      </a>
+    </div>
+
+    <div class="panel" style="margin-top:6px;">
+      <h3 style="margin-bottom:10px;">Recent applications</h3>
+      <div class="member-list">
+        <div class="member-card">
+          <div class="who">
+            <div class="initials">SS</div>
+            <div><div class="name">Sukhwinder Singh</div><div class="meta">KU-100230 &middot; Maur Mandi, Bathinda</div></div>
+          </div>
+          <span class="status-badge pending">Pending</span>
+        </div>
+        <div class="member-card">
+          <div class="who">
+            <div class="initials">HS</div>
+            <div><div class="name">Harpreet Singh</div><div class="meta">KU-100227 &middot; Nathana, Bathinda</div></div>
+          </div>
+          <span class="status-badge pending">Pending</span>
+        </div>
+        <div class="member-card">
+          <div class="who">
+            <div class="initials">RK</div>
+            <div><div class="name">Ramesh Kumar</div><div class="meta">KU-100231 &middot; Bhagta Bhai Ka, Bathinda</div></div>
+          </div>
+          <span class="status-badge verified">Verified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

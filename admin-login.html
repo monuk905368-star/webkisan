@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Login — Kisan Union</title>
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.jpg" alt="Kisan Union — Bharatiya Kisan Union Punjab emblem" class="logo-mark">
+      <span>Kisan Union<span class="logo-tag">Farmers United. Farmers Strong.</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="check-membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <div class="panel panel-narrow" style="max-width:420px;">
+      <div style="text-align:center; margin-bottom:22px;">
+        <img src="assets/images/logo.jpg" alt="Kisan Union emblem" style="width:76px; height:76px; border-radius:50%; object-fit:cover; box-shadow:0 2px 10px rgba(16,80,44,0.25); border:3px solid #fff; outline:1px solid var(--line); margin:0 auto 14px; display:block;">
+        <h1 style="font-size:1.5rem; margin-bottom:6px;">Admin Login</h1>
+        <p class="hint" style="margin:0;">For authorized Kisan Union administrators only.</p>
+      </div>
+
+      <form id="adminLoginForm" novalidate>
+        <p id="adminLoginError" role="alert" style="display:none; background:var(--bad-100); color:var(--bad-600); border-radius:var(--radius-sm); padding:12px 14px; font-size:0.9rem; font-weight:500; margin-bottom:18px;">Incorrect username or password. Please try again.</p>
+        <div class="field">
+          <label for="adminUsername">Username or mobile number</label>
+          <input type="text" id="adminUsername" name="adminUsername" required autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" name="adminPassword" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-secondary btn-block" id="adminLoginBtn">
+          <span class="spinner"></span>
+          Login
+        </button>
+        <p style="text-align:center; margin-top:16px;"><a href="#" class="btn-ghost" style="text-decoration:underline;">Forgot Password?</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="logo-mark footer-logo-mark">
+      <div>
+        <span>Kisan Union</span>
+        <p>Farmers United. Farmers Strong.</p>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="register.html">Register</a>
+      <a href="check-membership.html">Check Membership</a>
+      <a href="contact.html">Contact Head Union</a>
+      <a href="admin-login.html">Admin Login</a>
+    </nav>
+    <div class="footer-legal">
+      <p>&copy; 2026 Kisan Union. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Membership Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
