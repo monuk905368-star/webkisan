@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Head Union — Kisan Union</title>
+<meta name="description" content="Contact the Kisan Union Head Union for help with membership or registration.">
+<link rel="icon" type="image/png" href="assets/images/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.jpg" alt="Kisan Union — Bharatiya Kisan Union Punjab emblem" class="logo-mark">
+      <span>Kisan Union<span class="logo-tag">Farmers United. Farmers Strong.</span></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="check-membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+      <a href="admin-login.html" class="nav-admin">Admin Login</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="container">
+    <a href="index.html" class="back-link">&lsaquo; Back to home</a>
+    <h1>Contact Head Union</h1>
+    <p>Have a question about membership or need help with your registration? Contact the Kisan Union directly.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:28px;" class="contact-columns">
+
+      <div class="panel">
+        <h3>Head Union details</h3>
+        <div style="display:flex; flex-direction:column; gap:14px; margin:18px 0 22px;">
+          <div>
+            <p class="hint" style="margin-bottom:2px;">Head Union Name</p>
+            <p style="margin:0; font-weight:600;">[HEAD UNION NAME]</p>
+          </div>
+          <div>
+            <p class="hint" style="margin-bottom:2px;">Phone</p>
+            <p style="margin:0; font-weight:600;">[UNION PHONE NUMBER]</p>
+          </div>
+          <div>
+            <p class="hint" style="margin-bottom:2px;">WhatsApp</p>
+            <p style="margin:0; font-weight:600;">[WHATSAPP NUMBER]</p>
+          </div>
+          <div>
+            <p class="hint" style="margin-bottom:2px;">Email</p>
+            <p style="margin:0; font-weight:600;">[UNION EMAIL]</p>
+          </div>
+          <div>
+            <p class="hint" style="margin-bottom:2px;">Office Address</p>
+            <p style="margin:0; font-weight:600;">[UNION OFFICE ADDRESS]</p>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="tel:#" class="btn btn-primary btn-block">Call Head Union</a>
+          <a href="https://wa.me/" class="btn btn-secondary btn-block">WhatsApp Head Union</a>
+        </div>
+        <p class="hint" style="margin-top:14px;">These contact details are placeholders and will be replaced with the real Head Union information.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Send a message</h3>
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="contactName">Your name</label>
+            <input type="text" id="contactName" name="contactName" required>
+          </div>
+          <div class="field">
+            <label for="contactMobile">Mobile number</label>
+            <input type="tel" id="contactMobile" name="contactMobile" required inputmode="numeric" maxlength="10" data-validate="mobile">
+            <p class="error-msg">Please enter a valid 10-digit mobile number.</p>
+          </div>
+          <div class="field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="contactMessage" required placeholder="How can the Union help you?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" id="sendMessageBtn">
+            <span class="spinner"></span>
+            Send Message
+          </button>
+          <p id="contactSuccessNote" class="hint" style="display:none; margin-top:12px; color:var(--good-600); font-weight:600;">Thank you — your message has been noted. The Union will contact you soon.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.jpg" alt="Kisan Union emblem" class="logo-mark footer-logo-mark">
+      <div>
+        <span>Kisan Union</span>
+        <p>Farmers United. Farmers Strong.</p>
+      </div>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="register.html">Register</a>
+      <a href="check-membership.html">Check Membership</a>
+      <a href="contact.html">Contact Head Union</a>
+      <a href="admin-login.html">Admin Login</a>
+    </nav>
+    <div class="footer-legal">
+      <p>&copy; 2026 Kisan Union. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Membership Guidelines</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @media (max-width: 720px) {
+    .contact-columns { grid-template-columns: 1fr !important; }
+  }
+</style>
+
+<script src="js/main.js"></script>
+<script>
+  (function () {
+    var form = document.getElementById('contactForm');
+    var btn = document.getElementById('sendMessageBtn');
+    var note = document.getElementById('contactSuccessNote');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      setButtonLoading(btn, true);
+      setTimeout(function () {
+        setButtonLoading(btn, false);
+        note.style.display = 'block';
+        form.reset();
+      }, 700);
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Responsive rules — mobile-first overrides for larger screens down to phones
+   ========================================================================== */
+
+/* Mobile default adjustments (< 720px) */
+@media (max-width: 720px){
+  h1{ font-size: var(--step-4); }
+  h2{ font-size: var(--step-3); }
+  section{ padding: 44px 0; }
+
+  .nav-toggle{ display: flex; }
+  .main-nav{
+    position: fixed; inset: 62px 0 0 0; background: var(--field-700);
+    flex-direction: column; align-items: flex-start; gap: 4px; padding: 18px 24px;
+    transform: translateY(-8px); opacity: 0; pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+  .main-nav.open{ opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .main-nav a{ width: 100%; padding: 14px 4px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .main-nav a.nav-admin{ margin-top: 10px; text-align: center; }
+
+  .hero-inner{ grid-template-columns: 1fr; padding: 40px 20px 44px; text-align: left; }
+  .hero-art-wrap{ order: -1; max-width: 260px; }
+  .hero-badge{ width: 66px; height: 66px; top: -4px; }
+  .hero-actions{ flex-direction: column; }
+  .hero-actions .btn{ width: 100%; }
+
+  .action-grid{ grid-template-columns: 1fr; }
+  .steps{ grid-template-columns: 1fr; gap: 26px; }
+  .about-block{ grid-template-columns: 1fr; }
+  .field-row{ grid-template-columns: 1fr; gap: 0; }
+  .summary-grid{ grid-template-columns: 1fr; }
+
+  .footer-inner{ grid-template-columns: 1fr; }
+  .footer-legal{ flex-direction: column; align-items: flex-start; }
+
+  .form-actions{ flex-direction: column-reverse; }
+  .form-actions .btn{ width: 100%; }
+
+  .panel{ padding: 22px; }
+}
+
+/* Tablet (721px – 1024px) */
+@media (min-width: 721px) and (max-width: 1024px){
+  .action-grid{ grid-template-columns: repeat(2, 1fr); }
+  .hero-inner{ grid-template-columns: 1fr; text-align: left; }
+  .hero-art-wrap{ max-width: 340px; }
+}
+
+/* Large desktop */
+@media (min-width: 1400px){
+  :root{ --content-width: 1240px; }
+}
+
+/* Ensure no horizontal scroll anywhere */
+html, body{ overflow-x: hidden; }
